@@ -1,0 +1,10 @@
+{
+  "name": "mongodb-graphql",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "node ./src/**/*.spec.js"
+  },
+  "dependencies": {
+    "mongodb": "^3.0.4"
+  }
+}
