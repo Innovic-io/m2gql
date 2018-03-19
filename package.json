@@ -2,9 +2,9 @@
   "name": "mongodb-graphql",
   "version": "0.0.1",
   "scripts": {
-    "test": "node ./src/**/*.spec.js"
+    "test": "node ./lib/*.spec.js"
   },
-  "dependencies": {
+  "peerDependencies": {
     "mongodb": "^3.0.4"
   }
 }
