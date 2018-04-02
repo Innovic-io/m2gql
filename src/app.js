@@ -1,13 +1,12 @@
 const convert = require('../lib/convert');
-const fetch = require('./data.fetch');
-const MongoDB = require('mongodb');
-
+const { default: OceanService } = require('./ocean.service');
 async function bootstrap() {
+    const databaseURI = 'mongodb://localhost:25555/PinterestDB';
+    const databaseName = 'PinterestDB';
 
-    const conn = await MongoDB.MongoClient.connect('mongodb://localhost:23248/bim');
-    const database = conn.db('bim');
-
-    let data = await fetch.getAllCollectionsData(database);
+    const result = new OceanService();
+    await result.connectToDB(databaseURI, databaseName);
+    let data = await result.getAllObjects();
 
     const graphQL = convert.createGraphQL(data);
     console.log(graphQL);

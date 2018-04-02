@@ -5,5 +5,7 @@
     "test": "node ./lib/*.spec.js",
     "app": "node ./src/app.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mongodb": "^3.0.5"
+  }
 }
