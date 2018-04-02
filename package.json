@@ -1,6 +1,6 @@
 {
   "name": "mongodb-to-graphql2",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "test": "node ./lib/**/*.spec.js",
     "app": "node ./index.js"
