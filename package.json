@@ -1,14 +1,13 @@
 {
   "name": "mongodb-to-graphql2",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "scripts": {
     "test": "node ./lib/**/*.spec.js",
     "app": "node ./index.js"
   },
+  "main": "index.js",
   "dependencies": {
     "mongodb": "^3.0.5"
   },
-  "bin": {
-    "main": "./index.js"
-  }
+  "bin": {}
 }

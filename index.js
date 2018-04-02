@@ -1,20 +1,22 @@
 const convert = require('./lib/convert/convert');
-const { getAllObjects, connectToDB } = require('./lib/fetch/ocean.service');
 
-async function createGraph() {
+const { getAllCollectionsData, connectToDB, getAllObjects } = require('./lib/fetch/data.fetch');
 
-    const databaseURI = 'mongodb://localhost:25555/PinterestDB';
-    const databaseName = 'PinterestDB';
-    const collectionName = 'ocean';
-
+async function createFromDB(databaseURI, databaseName, collectionName = '') {
+    let data = '';
     await connectToDB(databaseURI, databaseName, collectionName);
-    let data = await getAllObjects();
 
-    const graphQL = convert.createGraphQL(data);
-    console.log(graphQL);
-    process.exit(0);
+    if(!!collectionName) {
+        data = await getAllObjects();
+    } else {
+        data = await getAllCollectionsData();
+    }
+
+    return convert.createGraphQL(data);
 }
 
-createGraph();
-
-module.exports = createGraph;
+module.exports = {
+    createFromDB,
+    createGraphQL: convert.createGraphQL,
+    getAllCollectionsData: getAllCollectionsData
+};
