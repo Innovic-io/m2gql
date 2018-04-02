@@ -15,4 +15,6 @@ async function createGraph() {
     process.exit(0);
 }
 
+createGraph();
+
 module.exports = createGraph;
