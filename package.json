@@ -1,13 +1,16 @@
 {
   "name": "mongodb-to-graphql2",
-  "version": "0.0.9",
+  "version": "0.0.17",
   "scripts": {
     "test": "node ./lib/**/*.spec.js",
-    "app": "node ./index.js"
+    "app": "node ./index.js mongodb://localhost:23248/geoGameDB geoGameDB"
+
   },
   "main": "index.js",
   "dependencies": {
     "mongodb": "^3.0.5"
   },
-  "bin": {}
+  "bin": {
+    "create": "script.js"
+  }
 }
