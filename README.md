@@ -8,21 +8,21 @@ mn2ql -d DB_PATH -m NAME -c COLLECTION -f ./location/file.graphql -s COMPANY
 ```
 
 #### Fields:
-##### -d DB_PATH
+###### -d DB_PATH
 - Path to Database in which to search for elements.
 - This field is **mandatory**
 
-##### -c COLLECTION
+###### -c COLLECTION
 - If wanted Graphql Type of just one collection
 
-##### -m NAME
+###### -m NAME
 - If fetched one collection, provide name of Type
 - Default value is collection name
 
-##### -f ./location/file.graphql
+###### -f ./location/file.graphql
 - File location on which to save GraphQL Types
 
-##### - s COMPANY
+###### - s COMPANY
 - Company name to write in schemas collection of Database
 
 **File path or company name must be provided**
@@ -39,18 +39,18 @@ createFromDB(databaseURI, collectionName, modelName, companyName)
 createFromDB('mongodb://localhost:25555/PinterestDB', 'users')
 ```
 #### Elements:
-##### databaseURI
+###### databaseURI
 - Path to Database in which to search for elements.
 - This field is **mandatory**
 
-##### collectionName
+###### collectionName
 - If wanted Graphql Type of just one collection
 
-##### modelName
+###### modelName
 - If fetched one collection, provide name of Type
 - Default value is collection name
 
-##### companyName
+###### companyName
 - Company name to write in schemas collection of Database
 
 ## createGraphQL

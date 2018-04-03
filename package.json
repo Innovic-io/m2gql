@@ -1,6 +1,6 @@
 {
   "name": "mongodb-to-graphql2",
-  "version": "0.0.23",
+  "version": "0.0.26",
   "scripts": {
     "test": "node ./lib/**/*.spec.js",
     "mn2gql": "node ./lib/script.js -d mongodb://localhost:23248/geoGameDB -s company -f some.graphql"
@@ -16,5 +16,6 @@
   "description": "Package for transfering MongoDB Collection data to GraphQL Types",
   "author": {
     "name": "Innovic"
-  }
+  },
+  "license": "MIT"
 }
