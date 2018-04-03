@@ -1,13 +1,13 @@
 # MongoDB to Graphql
 
 ## mn2gql script
-example request:
+#### Example request:
 
 ```
-mn2ql -d DB_PATH -m NAME -c COLLECTION -f file.graphql -s COMPANY
+mn2ql -d DB_PATH -m NAME -c COLLECTION -f ./location/file.graphql -s COMPANY
 ```
 
-Fields:
+#### Fields:
 ##### -d DB_PATH
 - Path to Database in which to search for elements.
 - This field is **mandatory**
@@ -19,7 +19,7 @@ Fields:
 - If fetched one collection, provide name of Type
 - Default value is collection name
 
-##### -f file.graphql
+##### -f ./location/file.graphql
 - File location on which to save GraphQL Types
 
 ##### - s COMPANY
@@ -28,17 +28,17 @@ Fields:
 **File path or company name must be provided**
 
 ## createFromDB
-full sintax
-
+Creating GraphQL Types from Database provided
+#### Full syntax
 ```
 createFromDB(databaseURI, collectionName, modelName, companyName)
 ```
 
-Example:
+#### Example request:
 ```
 createFromDB('mongodb://localhost:25555/PinterestDB', 'users')
 ```
-Elements:
+#### Elements:
 ##### databaseURI
 - Path to Database in which to search for elements.
 - This field is **mandatory**
@@ -50,11 +50,63 @@ Elements:
 - If fetched one collection, provide name of Type
 - Default value is collection name
 
-#### companyName
+##### companyName
 - Company name to write in schemas collection of Database
 
 ## createGraphQL
-WRITE SOMETHING
+Function which create GraphQL types out of collection provided
 
+#### Full sintax
+```
+createGraphQL(collections)
+```
+Function return formatted string of GraphQL Types
+
+#### Example request:
+```
+createGraphQL(
+    { 
+        user: [
+            {
+                first_name: "John", 
+                last_name: "Doe"
+            },
+            {
+                first_name: "Mike", 
+                last_name: "Smith"
+            }
+        ]
+    }
+)
+```
+
+#### Data must be provided in one of following ways:
+- Array of collections 
+```
+[ 
+  { 
+    collectionName: [CollectionData] 
+  },
+  {
+    collectionName2: [CollectionData2]
+  },
+]
+```
+- Single collection
+```
+  { 
+    collectionName: [CollectionData] 
+  }
+```
 ## getAllCollectionsData
-WRITE SOMETHING
+Get All Collections and Collections data from Database provided
+#### Full sintax
+```
+getAllCollectionsData(database?)
+```
+Function return formatted Array of collections and collection data
+- We can provide predefined database to be used
+#### Example request:
+```
+getAllCollectionsData()
+```

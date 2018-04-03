@@ -11,5 +11,10 @@
   },
   "bin": {
     "mn2gql": "./lib/script.js"
+  },
+  "keywords": ["graphql", "mongodb"],
+  "description": "Package for transfering MongoDB Collection data to GraphQL Types",
+  "author": {
+    "name": "Innovic"
   }
 }

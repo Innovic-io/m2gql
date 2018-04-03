@@ -29,7 +29,7 @@ async function createFromDB(databaseURI, collectionName = '', modelName = '', co
     if(!!collectionName) {
         data = await getAllObjects(modelName);
     } else {
-        data = await getAllCollectionsData();
+        data = await getAllCollectionsData(database);
     }
 
     return convert.createGraphQL(data);
