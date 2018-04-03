@@ -1,13 +1,33 @@
 const convert = require('./lib/convert/convert');
+const { SCHEMA_COLLECTION_NAME } = require("./lib/constants");
 
-const { getAllCollectionsData, connectToDB, getAllObjects } = require('./lib/fetch/data.fetch');
+const { connectToDB, getCollectionNames, getAllCollectionsData, getAllObjects } = require('./lib/fetch/data.fetch');
 
-async function createFromDB(databaseURI, databaseName, collectionName = '') {
+async function createFromDB(databaseURI, collectionName = '', modelName = '', companyName = '') {
+    if(!databaseURI) {
+        throw new Error('Database URI must be provided.');
+    }
+
     let data = '';
-    await connectToDB(databaseURI, databaseName, collectionName);
+
+    const database = await connectToDB(databaseURI, collectionName);
+    const collections = await getCollectionNames(database);
+
+    if(collections.includes(SCHEMA_COLLECTION_NAME)) {
+
+        const specificSchema = await database
+            .collection(SCHEMA_COLLECTION_NAME)
+            .find({name: companyName})
+            .toArray();
+
+        if(specificSchema.length > 0) {
+
+            return specificSchema[ 0 ].schema;
+        }
+    }
 
     if(!!collectionName) {
-        data = await getAllObjects();
+        data = await getAllObjects(modelName);
     } else {
         data = await getAllCollectionsData();
     }
