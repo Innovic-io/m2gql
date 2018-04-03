@@ -1,6 +1,6 @@
 {
   "name": "mongodb-to-graphql2",
-  "version": "0.0.20",
+  "version": "0.0.23",
   "scripts": {
     "test": "node ./lib/**/*.spec.js",
     "mn2gql": "node ./lib/script.js -d mongodb://localhost:23248/geoGameDB -s company -f some.graphql"
