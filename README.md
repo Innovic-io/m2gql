@@ -98,15 +98,3 @@ createGraphQL(
     collectionName: [CollectionData] 
   }
 ```
-## getAllCollectionsData
-Get All Collections and Collections data from Database provided
-#### Full sintax
-```
-getAllCollectionsData(database?)
-```
-Function return formatted Array of collections and collection data
-- We can provide predefined database to be used
-#### Example request:
-```
-getAllCollectionsData()
-```

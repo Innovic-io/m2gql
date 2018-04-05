@@ -11,7 +11,7 @@ async function createFromDB(databaseURI, collectionName = '', modelName = '', co
     let data = '';
 
     const database = await connectToDB(databaseURI, collectionName);
-    const collections = await getCollectionNames(database);
+    const collections = await getCollectionNames();
 
     if(collections.includes(SCHEMA_COLLECTION_NAME)) {
 
@@ -37,6 +37,5 @@ async function createFromDB(databaseURI, collectionName = '', modelName = '', co
 
 module.exports = {
     createFromDB,
-    createGraphQL: convert.createGraphQL,
-    getAllCollectionsData: getAllCollectionsData
+    createGraphQL: convert.createGraphQL
 };
