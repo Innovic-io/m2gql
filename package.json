@@ -1,6 +1,6 @@
 {
   "name": "mongodb-to-graphql2",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "typings": "index.d.ts",
   "main": "index.js",
   "scripts": {
