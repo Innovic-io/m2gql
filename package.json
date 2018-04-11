@@ -1,5 +1,5 @@
 {
-  "name": "m2qql",
+  "name": "m2gql",
   "version": "0.0.0",
   "typings": "index.d.ts",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "mongodb": "^3.0.5"
   },
   "bin": {
-    "mn2gql": "./lib/script.js"
+    "m2gql": "./lib/script.js"
   },
   "keywords": ["graphql", "mongodb"],
   "description": "Package for transfering MongoDB Collection data to GraphQL Types",

@@ -6,13 +6,13 @@ Generate GraphQL schema from data in MongoDB collection.
 ## Installation
 ```
 
-npm install m2qql --save-dev
+npm install m2gql --save-dev
 ```
 
 ## CLI
 
 ```
-m2qll -d DB_PATH -m NAME -c COLLECTION -f ./location/file.graphql -s COMPANY
+m2gql -d DB_PATH -m NAME -c COLLECTION -f ./location/file.graphql -s COMPANY
 ```
 
 #### Fields:
