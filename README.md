@@ -1,10 +1,18 @@
-# MongoDB to Graphql
+# MongoDB to GraphQL
 
-## mn2gql script
-#### Example request:
+Generate GraphQL schema from data in MongoDB collection.
+
+
+## Installation
+```
+
+npm install m2qql --save-dev
+```
+
+## CLI
 
 ```
-mn2ql -d DB_PATH -m NAME -c COLLECTION -f ./location/file.graphql -s COMPANY
+m2qll -d DB_PATH -m NAME -c COLLECTION -f ./location/file.graphql -s COMPANY
 ```
 
 #### Fields:
