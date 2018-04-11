@@ -3,7 +3,7 @@ const { SCHEMA_COLLECTION_NAME } = require("./lib/constants");
 
 const { connectToDB, getCollectionNames, getAllCollectionsData, getAllObjects } = require('./lib/fetch/data.fetch');
 
-async function createFromDB(databaseURI, collectionName = '', modelName = '', companyName = '') {
+async function createFromDB({databaseURI, collectionName, modelName, companyName}) {
     if(!databaseURI) {
         throw new Error('Database URI must be provided.');
     }
