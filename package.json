@@ -1,6 +1,6 @@
 {
   "name": "m2gql",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "typings": "index.d.ts",
   "main": "index.js",
   "scripts": {
