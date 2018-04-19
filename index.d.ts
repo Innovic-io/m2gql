@@ -10,5 +10,5 @@ interface ICreateFromDB {
 
 declare module 'm2gql' {
     export function createFromDB({}: ICreateFromDB): Promise<string>
-    export function createGraphQL(collectionData: ICollection | ICollection[]): string;
+    export function createGraphQL(collectionData: ICollection | ICollection[], nullReplacement?: string): string;
 }
